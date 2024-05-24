@@ -1,0 +1,36 @@
+<?php
+
+namespace {{ namespace }};
+
+use Filament\Forms;
+use Filament\Widgets\FormWidget;
+
+class {{ class }} extends FormWidget
+{
+    public string $color = 'primary';
+
+    public ?string $icon = '';
+
+    public ?string $iconColor = null;
+
+    public ?array $data = [];
+
+    public function form(Forms\Form $form): Forms\Form
+    {
+        return $form
+            ->schema([
+                // ...
+            ])
+            ->statePath('data');
+    }
+
+    public function submit()
+    {
+        // $data = $this->form->getState();
+    }
+
+    public function getSubmitLabel(): string
+    {
+        return __('Submit');
+    }
+}
